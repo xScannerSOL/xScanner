@@ -60,13 +60,13 @@ export default function Home() {
                 </a>
               </Button>
               <Button variant="outline" size="sm" asChild>
-                <a href="https://t.me/xCheckSOL" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://t.me/xCheckSOL_bot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <SiTelegram className="h-4 w-4" />
                   Telegram
                 </a>
               </Button>
               <Button variant="outline" size="sm" asChild>
-                <a href="https://github.com/xCheckSOL" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://github.com/xCheckSOL/xCheck" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Github className="h-4 w-4" />
                   GitHub
                 </a>
