@@ -45,7 +45,7 @@ export default function Home() {
               </div>
             </div>
             <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
-              xCheck
+              xScanner
             </h1>
           </div>
 
@@ -54,19 +54,19 @@ export default function Home() {
             {/* Social Links */}
             <div className="flex gap-3">
               <Button variant="outline" size="sm" asChild>
-                <a href="https://twitter.com/xCheckSOL" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://twitter.com/xScannerSOL" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Twitter className="h-4 w-4" />
                   Twitter
                 </a>
               </Button>
               <Button variant="outline" size="sm" asChild>
-                <a href="https://t.me/xCheckSOL_bot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://t.me/xScannerSOL_bot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <SiTelegram className="h-4 w-4" />
                   Telegram
                 </a>
               </Button>
               <Button variant="outline" size="sm" asChild>
-                <a href="https://github.com/xCheckSOL/xCheck" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://github.com/xScannerSOL/xScanner" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Github className="h-4 w-4" />
                   GitHub
                 </a>
