@@ -21,7 +21,7 @@ type AnalysisData = {
 export default function Home() {
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
   const [copied, setCopied] = useState(false);
-  const contractAddress = "xxxxxxxx"; // Placeholder contract address
+  const contractAddress = "HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH"; // Solana contract address
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(contractAddress);
