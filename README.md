@@ -2,7 +2,7 @@
 git clone https://github.com/xCheckSOL/xCheck.git
 
 # Navigate to project directory
-cd xcheck
+cd xCheck
 
 # Install dependencies
 npm install
