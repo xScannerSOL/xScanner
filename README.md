@@ -7,5 +7,5 @@ cd xScanner
 # Install dependencies
 npm install
 
-# Start the development server
+# Start development server
 npm run dev
