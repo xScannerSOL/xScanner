@@ -11,40 +11,35 @@ async function initRepository() {
       auth: process.env.GITHUB_TOKEN
     });
 
-    console.log('Creating organization...');
+    console.log('Creating repository under your account...');
     try {
-      await octokit.orgs.create({
-        name: 'xScannerSOL',
-        company: 'xScanner',
-        description: 'Social Media Intelligence Platform'
+      await octokit.repos.createForAuthenticatedUser({
+        name: 'xScanner',
+        description: 'Social Media Intelligence Platform - Track and analyze digital presence',
+        private: false,
+        has_issues: true,
+        has_projects: true,
+        has_wiki: true,
+        auto_init: true
       });
-      console.log('Organization created successfully');
+      console.log('Repository created successfully');
     } catch (e) {
-      console.log('Organization already exists or creation failed, proceeding with repository...');
+      if (e.status === 422) {
+        console.log('Repository already exists, proceeding with code push...');
+      } else {
+        throw e;
+      }
     }
-
-    console.log('Creating repository under organization...');
-    await octokit.repos.createInOrg({
-      org: 'xScannerSOL',
-      name: 'xScanner',
-      description: 'Social Media Intelligence Platform - Track and analyze digital presence',
-      private: false,
-      has_issues: true,
-      has_projects: true,
-      has_wiki: true
-    });
-
-    console.log('Repository created successfully');
 
     // Initialize git and push code
     const commands = [
-      'git remote remove origin || true', // Remove existing remote if it exists
+      'git remote remove origin || true',
       'git init',
       'git add .',
       'git commit -m "Initial commit: xScanner Social Media Intelligence Platform"',
       'git branch -M main',
-      'git remote add origin https://github.com/xScannerSOL/xScanner.git',
-      'git push -u origin main --force' // Force push to overwrite any existing content
+      'git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/xScanner.git', //Corrected this line.  Replace <YOUR_GITHUB_USERNAME>
+      'git push -u origin main --force'
     ];
 
     for (const cmd of commands) {
