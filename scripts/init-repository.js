@@ -7,6 +7,10 @@ const execAsync = promisify(exec);
 
 async function initRepository() {
   try {
+    if (!process.env.GITHUB_TOKEN) {
+      throw new Error('GITHUB_TOKEN environment variable is required');
+    }
+
     const octokit = new Octokit({
       auth: process.env.GITHUB_TOKEN
     });
@@ -38,12 +42,12 @@ async function initRepository() {
       'git add .',
       'git commit -m "Initial commit: xScanner Social Media Intelligence Platform"',
       'git branch -M main',
-      'git remote add origin https://github.com/xScannerSOL/xScanner.git',
+      `git remote add origin https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/xScannerSOL/xScanner.git`,
       'git push -u origin main --force'
     ];
 
     for (const cmd of commands) {
-      console.log(`Executing: ${cmd}`);
+      console.log(`Executing: ${cmd.replace(process.env.GITHUB_TOKEN, '***')}`);
       await execAsync(cmd);
     }
 
