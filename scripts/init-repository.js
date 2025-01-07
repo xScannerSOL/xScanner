@@ -38,7 +38,7 @@ async function initRepository() {
       'git add .',
       'git commit -m "Initial commit: xScanner Social Media Intelligence Platform"',
       'git branch -M main',
-      'git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/xScanner.git', //Corrected this line.  Replace <YOUR_GITHUB_USERNAME>
+      'git remote add origin https://github.com/xScannerSOL/xScanner.git',
       'git push -u origin main --force'
     ];
 
