@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1500" height="500" viewBox="0 0 1500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <rect width="1500" height="500" fill="hsl(222.2 47.4% 11.2%)"/>
+  
+  <!-- Decorative dots pattern -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="2" fill="white"/>
+    <circle cx="300" cy="200" r="2" fill="white"/>
+    <circle cx="500" cy="150" r="2" fill="white"/>
+    <circle cx="700" cy="250" r="2" fill="white"/>
+    <circle cx="900" cy="100" r="2" fill="white"/>
+    <circle cx="1100" cy="200" r="2" fill="white"/>
+    <circle cx="1300" cy="150" r="2" fill="white"/>
+  </g>
+
+  <!-- Logo -->
+  <g transform="translate(50, 100) scale(0.75)">
+    <circle cx="200" cy="200" r="180" fill="hsl(265, 89%, 53%)"/>
+    <path d="M120 120 L280 280 M280 120 L120 280" 
+          stroke="white" 
+          stroke-width="40" 
+          stroke-linecap="round"/>
+    <path d="M160 300 L100 240 L140 200 L180 240 L300 120 L340 160 L180 320 L160 300Z" 
+          fill="white" 
+          opacity="0.3"/>
+  </g>
+
+  <!-- Text -->
+  <text x="400" y="220" fill="white" font-family="system-ui" font-size="120" font-weight="bold">xScanner</text>
+  <text x="400" y="280" fill="white" font-family="system-ui" font-size="40" opacity="0.7">Social Media Intelligence Platform</text>
+
+  <!-- Network visualization -->
+  <g transform="translate(1000, 250)">
+    <circle cx="0" cy="0" r="3" fill="hsl(265, 89%, 53%)"/>
+    <circle cx="50" cy="-30" r="3" fill="hsl(265, 89%, 53%)"/>
+    <circle cx="80" cy="20" r="3" fill="hsl(265, 89%, 53%)"/>
+    <line x1="0" y1="0" x2="50" y2="-30" stroke="hsl(265, 89%, 53%)" stroke-width="1"/>
+    <line x1="50" y1="-30" x2="80" y2="20" stroke="hsl(265, 89%, 53%)" stroke-width="1"/>
+    <line x1="0" y1="0" x2="80" y2="20" stroke="hsl(265, 89%, 53%)" stroke-width="1"/>
+  </g>
+</svg>

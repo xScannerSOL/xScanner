@@ -11,8 +11,21 @@ async function initRepository() {
       auth: process.env.GITHUB_TOKEN
     });
 
-    console.log('Creating repository...');
-    await octokit.repos.createForAuthenticatedUser({
+    console.log('Creating organization...');
+    try {
+      await octokit.orgs.create({
+        name: 'xScannerSOL',
+        company: 'xScanner',
+        description: 'Social Media Intelligence Platform'
+      });
+      console.log('Organization created successfully');
+    } catch (e) {
+      console.log('Organization already exists or creation failed, proceeding with repository...');
+    }
+
+    console.log('Creating repository under organization...');
+    await octokit.repos.createInOrg({
+      org: 'xScannerSOL',
       name: 'xScanner',
       description: 'Social Media Intelligence Platform - Track and analyze digital presence',
       private: false,
@@ -22,15 +35,16 @@ async function initRepository() {
     });
 
     console.log('Repository created successfully');
-    
+
     // Initialize git and push code
     const commands = [
+      'git remote remove origin || true', // Remove existing remote if it exists
       'git init',
       'git add .',
-      'git commit -m "Initial commit: xScanner platform"',
+      'git commit -m "Initial commit: xScanner Social Media Intelligence Platform"',
       'git branch -M main',
       'git remote add origin https://github.com/xScannerSOL/xScanner.git',
-      'git push -u origin main'
+      'git push -u origin main --force' // Force push to overwrite any existing content
     ];
 
     for (const cmd of commands) {
